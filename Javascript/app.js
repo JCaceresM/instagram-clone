@@ -409,63 +409,94 @@ const view = {
     },
     home: () => {
       const body = document.getElementById("body");
-      body.innerHTML = `<div class="container">
-      <!-- Just an image -->
-      <nav class="navbar navbar-light bg-light">
-      <div class = 'd-flex justify-content-center'>
-      <a class="navbar-brand " href="#">
-          <img
-          src="/imgenes/ig.png"
-          width="35"
-          height="35"
-          class='mx-auto'
-          alt=""
-          loading="lazy"
-          />
-      </a>
-      </div>
-      <div class="dropdown ">
-        <button class="btn  dropdown" type="image" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="text-center ">
-            <img src="."
-             class="rounded" alt="..." style="width: 30px;" focusable='false'>
-          </div>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Perfil</a>
-          <a class="dropdown-item" href="#">Salir</a>
+      body.innerHTML = `
+      <div class="container-fluid">
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-light">
+        <div class = 'd-flex justify-content-center'>
+        <a class="navbar-brand " href="#">
+            <img
+            src="/imgenes/ig.png"
+            width="35"
+            height="35"
+            class='mx-auto'
+            alt=""
+            loading="lazy"
+            />
+        </a>
         </div>
-      </div>
-      </nav>
-      <div class="row col-12 ">
-      <!-- -->
-      <div
-        id='post'
-        class="container col   border ml-3 mt-2 mb-3"
-        >post
+        <div class="row">
+          <div class="btn-group dropleft mr-3">
+            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Nuevo post
+            </button>
+            <div class=" dropdown-menu text-center" style="width: 20rem;">
+    
+                <div class="border mt-2 mb-2 ml-2"">
+                  <h3 class="h3">Escoja una imagen</h3><hr>
+                  <input type="file" class="form-control-file ml-2 mb-3" id="exampleFormControlFile1">
+                </div>
+                <button class=" btn btn-outline-primary ">post</button>
+              
+            </div>
+          </div><hr>
 
-      </div>
-      <div
-        id="online"
-        class="container  col-sm-3 offset-sm-3    border ml-3 mt-2 mb-3"
-        >online
-      </div>
-      </div>
-  </div>
-  </div>    `;
+          <div class="btn-group  ">
+            <button class="btn  dropdown" type="image" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="text-center ">
+                <img src="C:\Users\Jonas_CM\Desktop\courses\ITLA\JS\instagram\imgenes\email.png"
+                 class="rounded" alt="..." style="width: 30px;" focusable='false'>
+              </div>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Salir</a>
+            </div>
+          </div>
+        </div>
+        </nav>
+        <div class="row col-sm-12 ">
+        <!-- -->
+        <div
+          id='post'
+          class="container col-sm-5   border  mt-2 mb-3 mr-0"
+          >post
+
+        </div>
+        <div
+          id="online"
+          class="container  col-sm-3   border ml-5 mt-2 mb-3"
+          >online
+        </div>
+        </div>
+    </div>
+      `;
     },
     updatePost: () => {
       const post = document.getElementById("post");
     //   if (Database.actualData.name) {
-        const name =Database.actualData.name
+        const name = Database.actualData.name
         post.innerHTML = `
             <div class="card bg-light mb-3 mt-3" >
             <div class="card-header">${name}</div>
             <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
+            <!-- <h5 class="card-title">Light card title</h5> -->
+            <div class="text-center">
+                
+                <img src="/imgenes/ig.png" class="img-fluid" alt="Responsive image">
+            </div>
+
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
+          <div class="container">
+    <div class="row" style="padding-top: 240px;">
+        <a href="#" class="btn btn-large btn-primary" rel="popover"
+        data-html='true
+            data-content="<form><input type="text"/></form>"
+            data-placement="top" data-original-title="Fill in form">Open form</a>
+    </div>
+</div>
             `;
     //   }
     },
