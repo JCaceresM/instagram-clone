@@ -1,57 +1,85 @@
 function formRegister() {
-  const formLogin = document.getElementById("login");
+  console.log('form ')
+
+  const formLogin = document.getElementById("body");
   formLogin.innerHTML = ` 
-        <div class="form-group">
-            <label for="inputName">nombre</label>
-            <input
-            type="name"
-            class="form-control"
-            id="inputName"
-            aria-describedby="emailHelp"
-            placeholder="introduce tu nombre"
-        />
-        </div>
-          <div class="form-group">
-            <label for="inputEmail1">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="introduce un correo"
-            />
-          </div>
-          <div class="form-group">
-            <label for="inputPassword1">Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              id="inputPassword1"
-              placeholder="Crea una contraseña"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <button onclick="Register()" class="btn btn-primary">
-              Comfirmar
-            </button>
-          </div>
-          <p class="text-center">or</p>
-          <div class="d-flex justify-content-center">
-            <button onclick="formLogIn()" class="btn btn-primary">
-              Iniciar Session
-            </button>
-          </div>
-          <br/>
-  `;
-}function formLogIn() {
-  const formLogin = document.getElementById("login");
+  <div class="container border mt-3" style="width: 400px; height: auto;">
+  <div id="img" class="text-center">
+    <img
+      src="/imgenes/ig.png"
+      class="rounded"
+      style="width: 8rem;"
+      alt="..."
+    />
+  </div>
+  <form id="login" class="col-11 ml-3">
+  <div class="form-group">
+    <label for="inputEmailRegister">Nombre</label>
+    <input
+      value=""
+      type="name"
+      class="form-control"
+      id="inputNameRegister"
+      aria-describedby="emailHelp"
+      placeholder="introduce tu nombre"
+    />
+    </div>
+    <div class="form-group">
+    <label for="inputEmailRegister">Email</label>
+      <input
+        value=""
+        type="email"
+        class="form-control"
+        id="inputEmailRegister"
+        aria-describedby="emailHelp"
+        placeholder="introduce un correo"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputPassRegister">Contraseña</label>
+      <input
+        value= "" 
+        type="password"
+        class="form-control"
+        id="inputPassRegister"
+        placeholder="Crea una contraseña"
+      />
+    </div>
+    <div class="d-flex justify-content-center">
+      <button onclick="" class="btn btn-primary">
+        Comfirmar
+      </button>
+    </div>
+    <p class="text-center">or</p>
+    <div class="d-flex justify-content-center">
+      <a href="#" onclick="formLogIn()" class="stretched-link">Ya tienes una cuenta?</a>
+    </div>
+    <br/>
+    </form>
+  </div>
+
+ `
+}
+function formLogIn() {
+  console.log('form log')
+  const formLogin = document.getElementById("body");
   formLogin.innerHTML = `
-        <div class="form-group">
-        <label for="exampleInputEmail1">Usuario</label>
+    <div class="container border mt-3" style="width: 400px; height: auto;">
+    <div id="img" class="text-center">
+      <img
+        src="/imgenes/ig.png"
+        class="rounded"
+        style="width: 8rem;"
+        alt="..."
+      />
+    </div>
+    <form id="login" class="col-11 ml-3">
+      <div class="form-group">
+        <label for="emailLogIn">Usuario</label>
         <input
           type="email"
           class="form-control"
-          id="exampleInputEmail1"
+          id="emailLogIn"
           aria-describedby="emailHelp"
           placeholder="introduce tu correo"
         />
@@ -60,26 +88,44 @@ function formRegister() {
         >
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
+        <label for="passwordLogIn">Contraseña</label>
         <input
           type="password"
           class="form-control"
-          id="exampleInputPassword1"
+          id="passwordLogIn"
           placeholder="introduce tu cotrasena"
         />
       </div>
       <div class="d-flex justify-content-center">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" onclick="view.logIn(event)">
           Iniciar session
         </button>
       </div>
       <br />
       <p class="text-center">or</p>
       <div class="d-flex justify-content-center">
-        <button onclick="formRegister()" class="btn btn-primary">
-          Registrarse
+        <button onclick="view.viewSignIn.google(event)" class="btn btn-ligth">
+          <!-- <div id="img" class="text-center"> -->
+          <img
+            src="/imgenes/google.jpg"
+            class="rounded"
+            style="width: 2rem;"
+            alt="..."
+            id="Goggle"
+          />
+        </button>
+        <button class="btn btn-ligth" onclick="formRegister()">
+          <img
+            src="/imgenes/email.png"
+            class="rounded"
+            style="width: 2rem;"
+            alt="..."
+            id="Facebook"
+          />
         </button>
       </div>
       <br />
+    </form>
+  </div>
   `;
 }
